@@ -1,0 +1,19 @@
+<div>
+    {{TheGame.title}}
+    {{TheGame.year}}
+    <ng-container *ngIf="TheGame.console">
+    (Console Only)
+    </ng-container>
+    <button (click)="editGame()">Edit</button>
+    <button (click)="doDelete()">Delete</button>
+</div>
+<ng-container *ngIf="editMode">
+
+    <input type="text" [(ngModel)]="editTitle">
+    <input type="number" [(ngModel)]="editYear">
+    <input type="checkbox" [(ngModel)]="editConsole">
+    <button (click)="saveChanges()">Save</button>
+    <button (click)="cancelChanges()">Cancel</button>
+
+
+</ng-container>

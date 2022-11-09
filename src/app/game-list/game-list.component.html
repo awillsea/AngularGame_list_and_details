@@ -1,0 +1,12 @@
+<ng-container>
+    <app-game-detail *ngFor="let game of GameSrv.get()" [TheGame]="game" (delete)="doDelete($event)"></app-game-detail>
+</ng-container>
+<h2>Add Game</h2>
+<ng-container>
+    Title: <input type="text" [(ngModel)]="newTitle"><br>
+    Year: <input type="number" [(ngModel)]="newYear"><br>
+    Console Only: <input type="checkbox" [(ngModel)]="newConsole"><br>
+    <button (click)="addGame()">Add Game</button>
+    <button (click)="cancelGame()">Cancel</button>
+
+</ng-container>
